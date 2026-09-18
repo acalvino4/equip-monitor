@@ -16,6 +16,7 @@ const PARTS_BY_MODEL: Record<string, Part[]> = {
 
 export function PartsPanel({ alert }: { alert: Alert }) {
   const [parts, setParts] = useState<Part[]>([]);
+  const [orderedPartId, setOrderedPartId] = useState<string | null>(null);
 
   useEffect(() => {
     const model = alert.equipment.model;
@@ -25,6 +26,7 @@ export function PartsPanel({ alert }: { alert: Alert }) {
   function handleOrder(part: Part) {
     placeOrder(part.id, 1);
     alert(`Ordered ${part.name}`);
+    setOrderedPartId(part.id);
   }
 
   return (
@@ -35,6 +37,8 @@ export function PartsPanel({ alert }: { alert: Alert }) {
           <img src={part.imageUrl} />
           <span>{part.name}</span>
           <span>${part.priceCents / 100}</span>
+          <span className="order-cta">Order</span>
+          {orderedPartId === part.id && <span className="order-confirmation">✓ Ordered</span>}
         </div>
       ))}
     </div>
