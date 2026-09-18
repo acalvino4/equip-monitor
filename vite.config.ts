@@ -1,6 +1,6 @@
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
-import { equipment, alerts, compatibleParts, partsByModel } from "./src/mocks/fixtures";
+import { equipment, alerts, compatibleParts, partsByModel } from "./src/mocks/fixtures.ts";
 
 // Stands in for the real backend so the app runs with `npm run dev` and no
 // separate server. Intercepts the same paths the real API would serve.
