@@ -21,7 +21,3 @@ Returns the parts recommended for that equipment *and* fault code — the same e
 ### `POST /api/orders`
 
 Body: `{ partId: string, quantity: number }`. Returns `{ id: string, status: "placed" }`. Does not check stock — callers are expected to check `inStock` on the part before calling this.
-
-## Not a documented route
-
-`/api/parts?model=<model>` responds in this mock, but it was never part of the API the backend team shipped and published. If you see frontend code calling it, that's not based on anything documented here — treat it the same as any other undocumented API usage.
