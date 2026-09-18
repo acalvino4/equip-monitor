@@ -8,14 +8,11 @@ This repo is an extremely dumbed down sample of our real production app.
 
 ## Frontend vs. backend
 
-Everything under `src/` is the frontend — a React/TypeScript app, and the
-only code that's actually in scope for review. There is no real backend in
-this repo. In production this app talks to separate backend services over
-HTTP; here, `mock-server/` plus a small plugin in `vite.config.ts` fake just
-enough of those endpoints (`/api/alerts`, `/api/equipment/:id`,
-`/api/orders`, etc.) so the app runs standalone with nothing to deploy.
-Treat `mock-server/` and the mock-API block in `vite.config.ts` as
-throwaway scaffolding, not application code.
+`src/` is the app — a React/TypeScript frontend, and the only code in
+scope for review. `mock-server/` and the mock-API plugin in
+`vite.config.ts` aren't part of the app; they fake a backend
+(`/api/alerts`, `/api/equipment/:id`, `/api/orders`, etc.) so it runs
+standalone with nothing to deploy.
 
 ## Structure
 
