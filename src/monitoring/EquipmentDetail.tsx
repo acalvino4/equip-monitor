@@ -15,9 +15,10 @@ export function EquipmentDetail() {
   useEffect(() => {
     if (!equipmentId) return;
     fetchEquipment(equipmentId).then(setEquipment);
-    // The alert list endpoint returns lightweight records for history views —
-    // note that `alert.equipment` is NOT populated here, unlike the payload
-    // the dashboard gets. Don't assume it's there.
+    // The alert list endpoint returns lightweight records for history views.
+    // Local dev fixtures populate `alert.equipment` for convenience, but the
+    // real endpoint doesn't guarantee it's there — don't build on it. Use
+    // `alert.equipmentId` / `alert.faultCode` (always present) instead.
     fetchAlerts().then((all) => setAlerts(all.filter((a) => a.equipmentId === equipmentId)));
   }, [equipmentId]);
 
