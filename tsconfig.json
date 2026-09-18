@@ -10,5 +10,5 @@
     "noEmit": true,
     "allowImportingTsExtensions": true
   },
-  "include": ["src", "mock-server"]
+  "include": ["src", "mock-server", "vite.config.ts"]
 }
