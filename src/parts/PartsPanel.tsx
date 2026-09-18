@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Alert, Part } from "../types";
 import { fetchPartsForModel, placeOrder } from "./partsApi";
+import "./PartsPanel.css";
 
 // Maps equipment model to the parts most commonly ordered for that model.
 // TODO: pull this from the catalog service once it supports our filters.

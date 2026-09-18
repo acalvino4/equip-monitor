@@ -1,0 +1,11 @@
+.order-cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  background-color: #2563eb;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
