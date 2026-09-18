@@ -18,8 +18,8 @@ standalone with nothing to deploy.
 
 - `src/types.ts` — shared domain types
 - `src/utils/format.ts` — shared formatting helpers
-- `src/api/equipmentApi.ts` — fetch wrappers the frontend uses to call
-  `/api/*` (answered by `mock-server/`, not this file)
+- `src/api-client/equipmentApi.ts` — fetch wrappers the frontend uses to
+  call `/api/*` (answered by `mock-server/`, not this file)
 - `src/monitoring/` — dashboard and equipment detail views
 - `src/parts/` — replacement-parts ordering
 - `mock-server/` — fixture data backing the local backend stand-in
