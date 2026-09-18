@@ -3,6 +3,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { Equipment, Alert } from "../types";
 import { fetchEquipment, fetchAlerts } from "../api-client/equipmentClient";
 import { formatDate } from "../utils/format";
+import { PartsPanel } from "../parts/PartsPanel";
 
 export function EquipmentDetail() {
   const { equipmentId } = useParams<{ equipmentId: string }>();
@@ -40,6 +41,8 @@ export function EquipmentDetail() {
           </li>
         ))}
       </ul>
+
+      {activeAlert && <PartsPanel alert={activeAlert} />}
     </section>
   );
 }
