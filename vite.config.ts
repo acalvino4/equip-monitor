@@ -1,9 +1,10 @@
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
-import { equipment, alerts, compatibleParts, partsByModel } from "./src/mocks/fixtures.ts";
+import { equipment, alerts, compatibleParts, partsByModel } from "./mock-server/fixtures.ts";
 
-// Stands in for the real backend so the app runs with `npm run dev` and no
-// separate server. Intercepts the same paths the real API would serve.
+// Not application code — stands in for the real backend service so this
+// frontend-only sample runs standalone, with no server to deploy.
+// Intercepts the same paths the real API would serve.
 function mockApi(): Plugin {
   return {
     name: "mock-api",

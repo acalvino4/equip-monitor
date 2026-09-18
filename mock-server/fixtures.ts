@@ -1,4 +1,4 @@
-import { Equipment, Alert, Part } from "../types.ts";
+import { Equipment, Alert, Part } from "../src/types.ts";
 
 export const equipment: Equipment[] = [
   { id: "eq-1", name: "Line 4 Compressor", model: "CM-200", location: "Plant A - Bay 3", status: "fault" },
