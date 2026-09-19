@@ -4,7 +4,8 @@ import { fetchPartsForModel, placeOrder } from "./partsApi";
 import "./PartsPanel.css";
 
 // Maps equipment model to the parts most commonly ordered for that model.
-// TODO: pull this from the catalog service once it supports our filters.
+// TODO: probably switch this to fetchCompatibleParts once we confirm it
+// covers all our fault codes.
 const PARTS_BY_MODEL: Record<string, Part[]> = {
   "CM-200": [
     { id: "p1", sku: "FAN-200", name: "Cooling fan", priceCents: 4500, inStock: true, imageUrl: "/img/fan.png" },
