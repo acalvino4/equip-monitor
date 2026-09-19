@@ -13,5 +13,8 @@ export async function placeOrder(partId: string, quantity: number) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ partId, quantity }),
   });
+  if (!response.ok) {
+    throw new Error(`Order failed with status ${response.status}`);
+  }
   return response.json();
 }

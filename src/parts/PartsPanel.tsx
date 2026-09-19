@@ -14,17 +14,17 @@ const PARTS_BY_MODEL: Record<string, Part[]> = {
   ],
 };
 
-export function PartsPanel({ alert }: { alert: Alert }) {
+export function PartsPanel({ alert: activeAlert }: { alert: Alert }) {
   const [parts, setParts] = useState<Part[]>([]);
   const [orderedPartId, setOrderedPartId] = useState<string | null>(null);
 
   useEffect(() => {
-    const model = alert.equipment.model;
+    const model = activeAlert.equipment.model;
     setParts(PARTS_BY_MODEL[model] ?? []);
-  }, [alert]);
+  }, [activeAlert]);
 
-  function handleOrder(part: Part) {
-    placeOrder(part.id, 1);
+  async function handleOrder(part: Part) {
+    await placeOrder(part.id, 1);
     alert(`Ordered ${part.name}`);
     setOrderedPartId(part.id);
   }
