@@ -1,6 +1,6 @@
 # EquipMonitor
 
-This repo is an extremely dumbed down sample of our real production app - a dashboard for monitoring industrial equipment health across sites. Operators watch active alerts, drill into a specific piece of equipment, and review alert history.
+This app is an extremely dumbed down sample of our real production app - a dashboard for monitoring industrial equipment health across sites. Operators watch active alerts, drill into a specific piece of equipment, and review alert history.
 
 ## Overview
 
