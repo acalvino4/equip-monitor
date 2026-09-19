@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { Alert, Part } from "../types";
-import { fetchPartsForModel, placeOrder } from "./partsApi";
+import { placeOrder } from "./partsClient";
 import "./PartsPanel.css";
 
 // Maps equipment model to the parts most commonly ordered for that model.
-// TODO: probably switch this to fetchCompatibleParts once we confirm it
-// covers all our fault codes.
+// TODO: this should really be dynamic, not hardcoded.
 const PARTS_BY_MODEL: Record<string, Part[]> = {
   "CM-200": [
     { id: "p1", sku: "FAN-200", name: "Cooling fan", priceCents: 4500, inStock: true, imageUrl: "/img/fan.png" },
