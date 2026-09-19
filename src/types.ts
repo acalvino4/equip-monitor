@@ -9,8 +9,8 @@ export interface Equipment {
 export interface Alert {
   id: string;
   equipmentId: string;
-  // Populated by some endpoints (e.g. equipment detail) but not others
-  // (e.g. the flat alert list) — callers can't assume this is present.
+  // Optional per the /api/alerts contract (see mock-server/README.md) —
+  // don't write code that assumes this is always present.
   equipment?: Equipment;
   faultCode: string;
   message: string;

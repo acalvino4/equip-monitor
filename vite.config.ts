@@ -1,6 +1,6 @@
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
-import { equipment, alerts, compatibleParts, partsByModel } from "./mock-server/fixtures.ts";
+import { equipment, alerts, compatibleParts } from "./mock-server/fixtures.ts";
 
 // Not application code — a fake backend so the frontend runs standalone,
 // with nothing to deploy. See README.md.
@@ -33,12 +33,6 @@ function mockApi(): Plugin {
         if (compatMatch && req.method === "GET") {
           const faultCode = url.searchParams.get("faultCode") ?? "";
           res.end(JSON.stringify(compatibleParts[`${compatMatch[1]}:${faultCode}`] ?? []));
-          return;
-        }
-
-        if (url.pathname === "/parts" && req.method === "GET") {
-          const model = url.searchParams.get("model") ?? "";
-          res.end(JSON.stringify(partsByModel[model] ?? []));
           return;
         }
 

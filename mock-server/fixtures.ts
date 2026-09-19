@@ -8,9 +8,8 @@ export const equipment: Equipment[] = [
 
 const [compressor, pump, conveyor] = equipment;
 
-// NOTE for whoever wires up the real backend: these dev fixtures populate
-// `equipment` on every alert for convenience. The real history endpoint
-// does NOT guarantee that — see the comment in EquipmentDetail.tsx.
+// This mock populates `equipment` on every alert for convenience, even
+// though the type marks it optional — see the comment in EquipmentDetail.tsx.
 export const alerts: Alert[] = [
   {
     id: "al-1",
@@ -58,19 +57,11 @@ const coolingFan: Part = { id: "p1", sku: "FAN-200", name: "Cooling fan", priceC
 const driveBelt: Part = { id: "p2", sku: "BLT-200", name: "Drive belt", priceCents: 1899, inStock: false, imageUrl: "/img/belt.png" };
 const pressureSensor: Part = { id: "p3", sku: "SNS-90", name: "Pressure sensor", priceCents: 6200, inStock: true, imageUrl: "/img/sensor.png" };
 
-// Backs the existing, correct `fetchCompatibleParts` endpoint — keyed by
-// equipment + fault code, so different faults on the same machine can
-// recommend different parts.
+// Backs GET /api/equipment/:id/compatible-parts — keyed by equipment +
+// fault code, so different faults on the same machine can recommend
+// different parts.
 export const compatibleParts: Record<string, Part[]> = {
   "eq-1:OVERTEMP": [coolingFan],
   "eq-1:BELT_SLIP": [driveBelt],
   "eq-2:PRESSURE_LOW": [pressureSensor],
-};
-
-// Backs partsApi.ts's fetchPartsForModel — keyed by model only, no fault
-// code. Note this is what the PR's hardcoded PARTS_BY_MODEL map re-derives
-// instead of calling the real endpoint above.
-export const partsByModel: Record<string, Part[]> = {
-  "CM-200": [coolingFan, driveBelt],
-  "PX-90": [pressureSensor],
 };
