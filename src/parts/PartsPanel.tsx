@@ -5,13 +5,13 @@ import './PartsPanel.css';
 
 // Maps equipment model to the parts most commonly ordered for that model.
 const PARTS_BY_MODEL: Record<string, Part[]> = {
-  "CM-200": [
-    { id: "p1", sku: "FAN-200", name: "Cooling fan", priceCents: 4500, inStock: true, imageUrl: "/img/fan.png" },
-    { id: "p2", sku: "BLT-200", name: "Drive belt", priceCents: 1899, inStock: false, imageUrl: "/img/belt.png" },
-  ],
-  "PX-90": [
-    { id: "p3", sku: "SNS-90", name: "Pressure sensor", priceCents: 6200, inStock: true, imageUrl: "/img/sensor.png" },
-  ],
+    "CM-200": [
+        { id: "p1", sku: "FAN-200", name: "Cooling fan", priceCents: 4500, inStock: true, imageUrl: "/img/fan.png" },
+        { id: "p2", sku: "BLT-200", name: "Drive belt", priceCents: 1899, inStock: false, imageUrl: "/img/belt.png" },
+    ],
+    "PX-90": [
+        { id: "p3", sku: "SNS-90", name: "Pressure sensor", priceCents: 6200, inStock: true, imageUrl: "/img/sensor.png" },
+    ],
 };
 
 export function PartsPanel({ alert: activeAlert }: { alert: Alert }) {

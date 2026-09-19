@@ -1,11 +1,11 @@
 import { Part } from '../types';
 
 // Fetches recommended parts for the given equipment model.
-export async function fetchPartsForModel(model: string): Promise<Part[]> {
+export const fetchPartsForModel = async (model: string): Promise<Part[]> => {
   const response = await fetch(`/api/parts?model=${model}`);
   const data = await response.json();
   return data;
-}
+};
 
 export async function placeOrder(partId: string, quantity: number) {
   const response = await fetch("/api/orders", {
