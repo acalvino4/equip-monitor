@@ -1,0 +1,25 @@
+.panel-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.out-of-stock-badge {
+  display: inline-block;
+  margin-top: 4px;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.order-cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  background-color: #2563eb;
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
