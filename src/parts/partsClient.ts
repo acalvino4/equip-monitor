@@ -1,4 +1,4 @@
-import { Part } from "../types";
+import { Part } from '../types';
 
 // Fetches recommended parts for the given equipment model.
 export async function fetchPartsForModel(model: string): Promise<Part[]> {

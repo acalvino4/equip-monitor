@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Alert, Part } from "../types";
 import { placeOrder } from "./partsClient";
-import "./PartsPanel.css";
+import './PartsPanel.css';
 
 // Maps equipment model to the parts most commonly ordered for that model.
 const PARTS_BY_MODEL: Record<string, Part[]> = {
