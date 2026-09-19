@@ -17,6 +17,7 @@ const PARTS_BY_MODEL: Record<string, Part[]> = {
 export function PartsPanel({ alert: activeAlert }: { alert: Alert }) {
   const [parts, setParts] = useState<Part[]>([]);
   const [orderedPartId, setOrderedPartId] = useState<string | null>(null);
+  const [errorPartId, setErrorPartId] = useState<string | null>(null);
 
   useEffect(() => {
     const model = activeAlert.equipment.model;
@@ -37,8 +38,14 @@ export function PartsPanel({ alert: activeAlert }: { alert: Alert }) {
           <img src={part.imageUrl} />
           <span>{part.name}</span>
           <span>${part.priceCents / 100}</span>
+          {!part.inStock && <span className="out-of-stock-badge">Out of stock</span>}
           <span className="order-cta">Order</span>
           {orderedPartId === part.id && <span className="order-confirmation">✓ Ordered</span>}
+          {errorPartId === part.id && (
+            <span className="order-error" role="alert">
+              Couldn't place this order. Please try again.
+            </span>
+          )}
         </div>
       ))}
     </div>
