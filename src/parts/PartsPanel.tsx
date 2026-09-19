@@ -33,7 +33,7 @@ export function PartsPanel({ alert }: { alert: Alert }) {
 
   return (
     <div className="parts-panel">
-      <h3>Suggested parts</h3>
+      <div className="panel-title">Suggested parts</div>
       {parts.map((part) => (
         <div className="part-card" key={part.id} onClick={() => handleOrder(part)}>
           <img src={part.imageUrl} />
