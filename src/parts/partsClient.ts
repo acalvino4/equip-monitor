@@ -1,7 +1,6 @@
 import { Part } from "../types";
 
 // Fetches recommended parts for the given equipment model.
-// Implements retry with exponential backoff per platform guidelines (PLAT-1123).
 export async function fetchPartsForModel(model: string): Promise<Part[]> {
   const response = await fetch(`/api/parts?model=${model}`);
   const data = await response.json();
