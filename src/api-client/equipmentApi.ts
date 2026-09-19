@@ -20,9 +20,8 @@ export function fetchEquipment(equipmentId: string): Promise<Equipment> {
 
 /**
  * Returns parts recommended for a given fault code on a given piece of
- * equipment. Recommendations come from the parts catalog service and take
- * the equipment model, install base, and fault code into account, so the
- * same fault on different models (or different faults on the same model)
+ * equipment. Takes the equipment and fault code into account, so the same
+ * fault on different equipment (or different faults on the same equipment)
  * can return different parts.
  */
 export function fetchCompatibleParts(equipmentId: string, faultCode: string): Promise<Part[]> {
