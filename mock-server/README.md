@@ -1,6 +1,6 @@
 # Mock backend
 
-Answers `equip-monitor`'s `/api/*` calls so the frontend runs standalone. Not application code — see the root README.
+Answers `equip-monitor`'s `/api/*` calls so the frontend runs standalone. Not application code.
 
 ## `GET /api/alerts`
 
