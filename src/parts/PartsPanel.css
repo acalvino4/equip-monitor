@@ -4,6 +4,14 @@
   margin-bottom: 8px;
 }
 
+.out-of-stock-badge {
+  display: inline-block;
+  margin-top: 4px;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .order-cta {
   display: inline-block;
   margin-top: 8px;
