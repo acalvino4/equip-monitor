@@ -1,6 +1,6 @@
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
-import { equipment, alerts, compatibleParts } from "./mock-server/fixtures.ts";
+import { equipment, alerts, compatibleParts, partsById } from "./mock-server/fixtures.ts";
 
 // Not application code — a fake backend so the frontend runs standalone,
 // with nothing to deploy. See README.md.
@@ -37,7 +37,18 @@ function mockApi(): Plugin {
         }
 
         if (url.pathname === "/orders" && req.method === "POST") {
-          res.end(JSON.stringify({ id: `order-${Date.now()}`, status: "placed" }));
+          let body = "";
+          req.on("data", (chunk) => (body += chunk));
+          req.on("end", () => {
+            const { partId } = JSON.parse(body || "{}") as { partId?: string };
+            const part = partId ? partsById[partId] : undefined;
+            if (part && !part.inStock) {
+              res.statusCode = 409;
+              res.end(JSON.stringify({ error: "out of stock" }));
+              return;
+            }
+            res.end(JSON.stringify({ id: `order-${Date.now()}`, status: "placed" }));
+          });
           return;
         }
 

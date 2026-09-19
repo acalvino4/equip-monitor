@@ -65,3 +65,10 @@ export const compatibleParts: Record<string, Part[]> = {
   "eq-1:BELT_SLIP": [driveBelt],
   "eq-2:PRESSURE_LOW": [pressureSensor],
 };
+
+// Backs POST /api/orders' stock check.
+export const partsById: Record<string, Part> = {
+  [coolingFan.id]: coolingFan,
+  [driveBelt.id]: driveBelt,
+  [pressureSensor.id]: pressureSensor,
+};
