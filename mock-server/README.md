@@ -16,4 +16,4 @@ Returns the parts recommended for that equipment *and* fault code — the same e
 
 ## `POST /api/orders`
 
-Body: `{ partId: string, quantity: number }`. Returns `{ id: string, status: "placed" }`, or `409` with `{ error: "out of stock" }` if the part's `inStock` is `false`. Checking `inStock` client-side first is good UX, but this endpoint enforces it regardless — callers must handle the error response.
+Body: `{ partId: string, quantity: number }`. Returns `{ id: string, status: "placed" }`, or `409` with `{ error: "out of stock" }` if the part's `inStock` is `false`. Callers must handle the error response.

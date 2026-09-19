@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { Equipment, Alert } from "../types";
-import { fetchEquipment, fetchAlerts } from "../api-client/equipmentApi";
+import { fetchEquipment, fetchAlerts } from "../api-client/equipmentClient";
 import { formatDate } from "../utils/format";
 
 export function EquipmentDetail() {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Alert } from "../types";
-import { fetchAlerts } from "../api-client/equipmentApi";
+import { fetchAlerts } from "../api-client/equipmentClient";
 import { formatDate } from "../utils/format";
 
 export function AlertsDashboard() {
